@@ -1,0 +1,47 @@
+def is_prime(num):
+    """
+    Check if a given number is prime.
+
+    Args:
+        num (int): The number to check.
+
+    Returns:
+        bool: True if the number is prime, False otherwise.
+    """
+    if num <= 1:
+        return False
+
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+
+    return True
+
+
+def find_prime_numbers(start, end):
+    """
+    Find all prime numbers within a given range.
+
+    Args:
+        start (int): The starting number of the range.
+        end (int): The ending number of the range.
+
+    Returns:
+        list: A list of prime numbers found within the range.
+    """
+    prime_numbers = []
+
+    for num in range(start, end + 1):
+        if is_prime(num):
+            prime_numbers.append(num)
+
+    return prime_numbers
+
+
+if __name__ == "__main__":
+    start = int(input("Enter the starting number: "))
+    end = int(input("Enter the ending number: "))
+
+    prime_numbers = find_prime_numbers(start, end)
+
+    print(f"Prime numbers between {start} and {end}: {prime_numbers}")

@@ -1,0 +1,28 @@
+virtualenv venv (when folder change to create a virtual memory)
+
+source venv/bin/activate. (virtual environment activate)
+
+pip install -r requirements.txt
+
+pip install gevent
+
+playwright install --with-deps (optional)
+
+python devika.py
+
+if error(
+    rm -rf .venv
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+)
+
+
+
+for frontend in different terminal
+
+cd ui/
+   bun install
+   bun run start
+
